@@ -11,6 +11,7 @@ h1 {
 
 #getGiphy {
 	text-align: center;
+	margin: 10px;
 }
 
 #searchTerm,
@@ -20,6 +21,19 @@ h1 {
 	padding: 8px;
 }
 
-#giphs {
-	border: 1px solid orange;
+#giphies {
+	/* border: 1px solid orange; */
+	display: flex;
+	justify-content: center;
+}
+#giphy {
+	display: inline-flex;
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+}
+img {
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
 }

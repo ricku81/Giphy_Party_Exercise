@@ -5,10 +5,11 @@ async function getGiphyByTerm (term) {
 			`http://api.giphy.com/v1/gifs/search?q=${term}&api_key=MhAodEJIJxQMxW9XqxKjyXfNYdLoOIym`
 		);
 		const randomGiphyIdx = Math.floor(Math.random() * res.data.data.length);
-		// const randomGiphy = res.data.data[randomGiphyIdx];
-		const randomGiphy = res.data.data[randomGiphyIdx].bitly_gif_url;
+		const randomGiphy = res.data.data[randomGiphyIdx].images.original.url;
+
 		console.log(randomGiphy);
 		console.log(res.data.data[randomGiphyIdx]);
+
 		appendGiphy(randomGiphy);
 	} catch (e) {
 		alert(`${term} giphies not found! Please try another Term.`);
@@ -26,4 +27,9 @@ function appendGiphy (randomGiphy) {
 	$('#giphies').append(newDiv);
 }
 
-getGiphyByTerm('food');
+// getGiphyByTerm('food');
+
+$('#getGiphy').on('submit', function (evt) {
+	evt.preventDefault();
+	getGiphyByTerm(`${$('#searchTerm').value}`);
+});
