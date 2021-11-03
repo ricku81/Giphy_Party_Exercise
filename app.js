@@ -2,7 +2,7 @@
 async function getGiphyByTerm (term) {
 	try {
 		const res = await axios.get(
-			`http://api.giphy.com/v1/gifs/search?q=${term}&api_key=MhAodEJIJxQMxW9XqxKjyXfNYdLoOIym`
+			`https://api.giphy.com/v1/gifs/search?q=${term}&api_key=MhAodEJIJxQMxW9XqxKjyXfNYdLoOIym`
 		);
 		const randomGiphyIdx = Math.floor(Math.random() * res.data.data.length);
 		const randomGiphy = res.data.data[randomGiphyIdx].images.original.url;
