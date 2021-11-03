@@ -27,9 +27,16 @@ function appendGiphy (randomGiphy) {
 	$('#giphies').append(newDiv);
 }
 
-// getGiphyByTerm('food');
-
 $('#getGiphy').on('submit', function (evt) {
 	evt.preventDefault();
-	getGiphyByTerm(`${$('#searchTerm').value}`);
+	getGiphyByTerm(`${$('#searchTerm').val()}`);
+});
+
+$('#resetBtn').on('click', function (evt) {
+	if ($('#giphies').html() === '') {
+		alert('No giphies to remove.');
+	}
+	else {
+		$('#giphies').empty();
+	}
 });
