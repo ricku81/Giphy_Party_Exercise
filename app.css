@@ -1,0 +1,25 @@
+body {
+	background-color: #161515;
+}
+
+h1 {
+	position: relative;
+	text-align: center;
+	color: white;
+	text-shadow: 2px 2px 3px orange;
+}
+
+#getGiphy {
+	text-align: center;
+}
+
+#searchTerm,
+#searchBtn {
+	border-radius: 4px;
+	border: 0;
+	padding: 8px;
+}
+
+#giphs {
+	border: 1px solid orange;
+}
